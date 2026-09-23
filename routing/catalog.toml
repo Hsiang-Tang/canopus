@@ -1,0 +1,76 @@
+# Synthetic, vendor-neutral routing catalog for tools/model_route.py.
+#
+# Tiers describe capability classes, not products. Map each tier to whatever
+# engine and model your team actually uses in a machine-local note; this file
+# makes no claim about any vendor's quality or price. `relative_cost` is a
+# unitless ordering (1 = cheapest model tier); it is not a price.
+
+version = 1
+
+# Minimum capability a task needs at each risk level (R0 trivial ... R3 critical).
+[risk_floor]
+R0 = 0
+R1 = 1
+R2 = 2
+R3 = 3
+
+[[tier]]
+id = "deterministic"
+description = "A script, formatter, codemod, or existing tool; no model at all"
+capability = 0
+relative_cost = 0
+max_risk = "R3"
+capabilities = ["repeatable"]
+task_classes = ["mechanical"]
+# Risk raises the verification bar, not the author: a deterministic tool is
+# verified the same way at any risk, so the risk floor does not exclude it.
+exempt_from_risk_floor = true
+
+[[tier]]
+id = "fast"
+description = "Small, low-latency model for well-specified, easily verified edits"
+capability = 1
+relative_cost = 1
+max_risk = "R1"
+capabilities = ["tool-use"]
+
+[[tier]]
+id = "balanced"
+description = "General coding model for routine implementation and review"
+capability = 2
+relative_cost = 3
+max_risk = "R2"
+capabilities = ["tool-use", "long-context"]
+
+[[tier]]
+id = "frontier"
+description = "Strongest available reasoning model for ambiguous, high-risk, or cross-cutting work"
+capability = 3
+relative_cost = 8
+max_risk = "R3"
+capabilities = ["tool-use", "long-context", "vision", "deep-reasoning"]
+
+# Extra capability a task class needs on top of its risk floor.
+[task_class.mechanical]
+min_capability = 0
+description = "Renames, formatting, regenerating files, version bumps"
+
+[task_class.implementation]
+min_capability = 1
+description = "Change code against a written spec with tests"
+
+[task_class.review]
+min_capability = 2
+description = "Independent review of a diff against its acceptance criteria"
+
+[task_class.research]
+min_capability = 2
+description = "Reading unfamiliar code or documents and summarising with evidence"
+
+[task_class.architecture]
+min_capability = 3
+description = "Design decisions, ADRs, or ambiguous requirements"
+
+[task_class.recovery]
+min_capability = 3
+description = "Diagnosing a stuck or circuit-broken task"

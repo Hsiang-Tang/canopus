@@ -1,0 +1,80 @@
+{
+  "title": "Runaway fix loop: circuit break",
+  "story": "An agent keeps patching a flaky integration test. Every round produces commits, test runs, and a review, so it looks busy, but no acceptance item closes. Activity never counts as progress, so the contract breaks the loop and hands the decision back to the owner.",
+  "envelope": {
+    "task_ref": "DEMO-202",
+    "north_star": "Nightly sync job succeeds against the staging fixture",
+    "acceptance": [
+      "AC1 sync completes",
+      "AC2 retries are bounded",
+      "AC3 failure alert fires once"
+    ],
+    "scope": [
+      "sync job"
+    ],
+    "corrective_limit": 2,
+    "review_limit": 2,
+    "realign_after": 2,
+    "circuit_break_after": 3
+  },
+  "events": [
+    {
+      "kind": "accept",
+      "item": "AC2 retries are bounded"
+    },
+    {
+      "kind": "checkpoint",
+      "note": "Fix the timeout in the sync step."
+    },
+    {
+      "kind": "activity",
+      "what": "commits",
+      "count": 3
+    },
+    {
+      "kind": "activity",
+      "what": "tests",
+      "count": 40
+    },
+    {
+      "kind": "corrective"
+    },
+    {
+      "kind": "checkpoint",
+      "note": "Retry with a longer timeout."
+    },
+    {
+      "kind": "activity",
+      "what": "commits",
+      "count": 2
+    },
+    {
+      "kind": "review"
+    },
+    {
+      "kind": "corrective"
+    },
+    {
+      "kind": "checkpoint",
+      "note": "Try mocking the upstream service."
+    },
+    {
+      "kind": "activity",
+      "what": "commits",
+      "count": 4
+    },
+    {
+      "kind": "activity",
+      "what": "tests",
+      "count": 40
+    },
+    {
+      "kind": "checkpoint",
+      "note": "Owner: decide between fixture repair and scope cut."
+    },
+    {
+      "kind": "activity",
+      "what": "commits"
+    }
+  ]
+}

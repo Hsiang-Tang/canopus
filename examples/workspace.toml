@@ -1,0 +1,15 @@
+version = 2
+root = "synthetic-workspace"
+allowed_top_levels = ["00_Inbox", "projects"]
+inbox_max_age_days = 14
+
+[[projects]]
+id = "sample-notes"
+path = "projects/sample-notes"
+lifecycle = "active"
+git = false
+ownership_class = "personal"
+sensitivity = "private"
+source_of_truth = "local-sensitive-store"
+backup_expectation = "none"
+remote_policy = "none"

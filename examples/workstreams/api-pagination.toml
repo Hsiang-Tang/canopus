@@ -1,0 +1,9 @@
+# Synthetic example: one executor adds cursor pagination to a billing service.
+id = "api-pagination"
+owner_role = "executor"
+writer = "agent-a"
+status = "active"
+branch = "ws/api-pagination"
+worktree = "../wt-api-pagination"
+mutation_scope = ["services/billing/api/**", "tests/billing/api/**"]
+depends_on = []

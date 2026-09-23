@@ -1,0 +1,60 @@
+{
+  "title": "Clean delivery: stop at done",
+  "story": "An agent adds CSV export to a synthetic reporting tool. All three acceptance items pass, one out-of-scope idea is deferred instead of built, and the task stops the moment acceptance is met instead of 'polishing'.",
+  "envelope": {
+    "task_ref": "DEMO-101",
+    "north_star": "Owners can export the weekly report as CSV",
+    "acceptance": [
+      "AC1 export button",
+      "AC2 CSV matches on-screen totals",
+      "AC3 empty week exports a header row"
+    ],
+    "scope": [
+      "report export"
+    ],
+    "corrective_limit": 2,
+    "review_limit": 2,
+    "realign_after": 2,
+    "circuit_break_after": 3
+  },
+  "events": [
+    {
+      "kind": "activity",
+      "what": "commits"
+    },
+    {
+      "kind": "accept",
+      "item": "AC1 export button"
+    },
+    {
+      "kind": "checkpoint",
+      "note": "Verify totals against the on-screen report."
+    },
+    {
+      "kind": "activity",
+      "what": "tests",
+      "count": 6
+    },
+    {
+      "kind": "accept",
+      "item": "AC2 CSV matches on-screen totals"
+    },
+    {
+      "kind": "finding",
+      "summary": "PDF export would also be nice",
+      "in_scope": false
+    },
+    {
+      "kind": "checkpoint",
+      "note": "Cover the empty-week boundary case."
+    },
+    {
+      "kind": "accept",
+      "item": "AC3 empty week exports a header row"
+    },
+    {
+      "kind": "activity",
+      "what": "commits"
+    }
+  ]
+}

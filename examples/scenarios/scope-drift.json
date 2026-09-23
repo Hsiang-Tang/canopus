@@ -1,0 +1,38 @@
+{
+  "title": "Scope drift: realign",
+  "story": "Midway through a login fix, the agent proposes adding single sign-on. The envelope is frozen, so widening scope without a new owner admission moves the task to REALIGN, where only alignment work is allowed.",
+  "envelope": {
+    "task_ref": "DEMO-303",
+    "north_star": "Password reset emails arrive within one minute",
+    "acceptance": [
+      "AC1 reset email is queued",
+      "AC2 link expires after 30 minutes"
+    ],
+    "scope": [
+      "password reset"
+    ],
+    "corrective_limit": 2,
+    "review_limit": 2,
+    "realign_after": 2,
+    "circuit_break_after": 3
+  },
+  "events": [
+    {
+      "kind": "accept",
+      "item": "AC1 reset email is queued"
+    },
+    {
+      "kind": "checkpoint",
+      "note": "Implement link expiry."
+    },
+    {
+      "kind": "finding",
+      "summary": "Add single sign-on while we are here",
+      "in_scope": false
+    },
+    {
+      "kind": "scope_change",
+      "note": "Return the SSO idea to the owner as a separate proposal; finish AC2 only."
+    }
+  ]
+}

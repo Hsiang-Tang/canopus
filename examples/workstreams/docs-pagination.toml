@@ -1,0 +1,10 @@
+# Synthetic example: a second writer documents the new API in its own worktree.
+# Its scope does not overlap the implementation stream, and it waits for it.
+id = "docs-pagination"
+owner_role = "executor"
+writer = "agent-b"
+status = "planned"
+branch = "ws/docs-pagination"
+worktree = "../wt-docs-pagination"
+mutation_scope = ["docs/api/pagination.md", "docs/api/index.md"]
+depends_on = ["api-pagination"]

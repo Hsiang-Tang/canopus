@@ -1,0 +1,37 @@
+{
+  "title": "Repeated blocker: stop early",
+  "story": "The same class of blocker (missing staging credentials) returns after it was reported once. A repeated blocker family is evidence the agent cannot solve it alone, so the contract stops instead of retrying.",
+  "envelope": {
+    "task_ref": "DEMO-404",
+    "north_star": "Deploy preview builds for every pull request",
+    "acceptance": [
+      "AC1 preview URL posted",
+      "AC2 preview torn down on merge"
+    ],
+    "scope": [
+      "preview deploy"
+    ],
+    "corrective_limit": 2,
+    "review_limit": 2,
+    "realign_after": 2,
+    "circuit_break_after": 3
+  },
+  "events": [
+    {
+      "kind": "blocker",
+      "family": "missing-environment-access"
+    },
+    {
+      "kind": "checkpoint",
+      "note": "Ask the owner for preview-environment access."
+    },
+    {
+      "kind": "activity",
+      "what": "commits"
+    },
+    {
+      "kind": "blocker",
+      "family": "missing-environment-access"
+    }
+  ]
+}
