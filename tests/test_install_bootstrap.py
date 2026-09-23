@@ -126,7 +126,7 @@ class MarkdownBlockTests(BootstrapTestCase):
             encoding="utf-8")
         self.cli("--apply")
         text = self.claude_md.read_text(encoding="utf-8")
-        self.assertEqual(text, f"{ib.START}\nRead {self.root}/AGENTS.md first.\n{ib.END}\n")
+        self.assertEqual(text, f"{ib.START}\nRead {self.root.resolve()}/AGENTS.md first.\n{ib.END}\n")
         self.assertIn("One writer per checkout", self.codex_md.read_text(encoding="utf-8"))  # default
 
     def test_path_overrides_are_home_relative(self):
