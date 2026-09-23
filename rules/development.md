@@ -114,6 +114,22 @@ The envelope is fixed at admission with `tools/canopus_task.py admit` and is
 evaluated by `tools/convergence.py`. Use `templates/task-issue.md` to record
 it in the task's Issue.
 
+## Exploration tasks
+
+Not every task can name its acceptance up front. When the real question is
+"what should we build?" or "is this feasible?", run a timeboxed exploration
+instead of forcing a fake envelope.
+
+- Declare it as exploration, with one question and a timebox (for example
+  "Can the export reuse the existing renderer? 60 minutes").
+- No acceptance freeze and no convergence gate. Changes stay on a throwaway
+  branch or in notes; nothing is merged as delivered work.
+- The output is fixed: what was learned, what was ruled out, and a proposed
+  envelope (North Star, acceptance, scope) for the real task — or a
+  recommendation not to build.
+- When the timebox ends, stop. Extending it is an owner decision. The follow-up
+  delivery task is admitted normally with the proposed envelope.
+
 ## Bounded convergence contract
 
 - Delegated sessions, reviewers, executors, handoffs, and fresh sessions

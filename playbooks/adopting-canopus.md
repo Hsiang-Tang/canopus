@@ -180,6 +180,12 @@ Paste that into [`handoff.md`](../templates/handoff.md) on the Issue and start
 the next session with [`session-starter.md`](../templates/session-starter.md).
 It resumes from the record, not the chat.
 
+Task records are local to each machine (`~/.canopus/state`). On the same
+machine, `admit` resumes the record. On another machine, or for a colleague
+picking the task up, the Issue is the source of truth: admit with the envelope
+from the Issue, then record the accepted items from the latest handoff comment
+before continuing.
+
 ## 9. Close (1 min)
 
 ```sh

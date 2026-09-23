@@ -45,7 +45,7 @@ failures are predictable:
 | **Method** — risk-scaled SDD, spec kit, ADRs, North Star envelope, assumptions first, anti-over-engineering | [`docs/methodology/`](docs/methodology/), [`rules/`](rules/) | — |
 | **Bootstrap** — one command installs the rules into Claude Code and Codex; project `AGENTS.md` is canonical, `CLAUDE.md` imports it | [`templates/`](templates/), [`playbooks/adopting-canopus.md`](playbooks/adopting-canopus.md) | `tools/install_bootstrap.py` |
 | **Task loop** — admit a task with a frozen envelope, record events, render the Owner Footer and Agent Handoff, close it | [`rules/session.md`](rules/session.md), [`docs/methodology/continuation-loop.md`](docs/methodology/continuation-loop.md) | `tools/canopus_task.py`, `tools/convergence.py` |
-| **Enforcement** — a one-way per-session latch and a Stop hook that blocks a response without the footer | [`docs/methodology/deterministic-enforcement.md`](docs/methodology/deterministic-enforcement.md) | `tools/footer_latch.py` |
+| **Enforcement** — a one-way per-session latch and a Stop hook that blocks a response without the footer (Claude Code; Codex has no equivalent hook and relies on a self-check) | [`docs/methodology/deterministic-enforcement.md`](docs/methodology/deterministic-enforcement.md) | `tools/footer_latch.py` |
 | **Coordination** — recommendation-only model routing, parallel workstreams with one writer per checkout, workspace health | [`rules/model-routing.md`](rules/model-routing.md), [`rules/workstreams.md`](rules/workstreams.md), [`rules/workspace.md`](rules/workspace.md) | `tools/model_route.py`, `tools/workstream.py`, `tools/workspace_doctor.py` |
 
 Plus a knowledge-promotion gate for turning lessons into de-identified,

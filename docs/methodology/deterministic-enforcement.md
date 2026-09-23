@@ -76,6 +76,15 @@ Reinstalling is idempotent; unrelated content and existing settings are kept.
 Project rules stay in the project's `AGENTS.md`, which `CLAUDE.md` imports with
 `@AGENTS.md`, so both engines read one canonical file.
 
+## Engine coverage
+
+The hard guarantee exists only where the engine exposes a hook that can refuse
+to end a turn. Today that is Claude Code (`SessionStart`, `Stop`,
+`SessionEnd`). Codex has no equivalent hook, so its bootstrap asks the agent to
+render the footer as a self-check before ending a turn. That is a prompt rule,
+with the weaknesses this document describes. Treat Codex sessions as
+unenforced and check their footers in review.
+
 ## Example
 
 A synthetic `billing-service` task is admitted and latched. Three turns later

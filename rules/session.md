@@ -184,6 +184,11 @@ from an old chat, a copied transcript, or a compacted summary.
 2. Run `python3 tools/canopus_task.py status --task <id>` and
    `python3 tools/canopus_task.py handoff --task <id>`.
 3. Admit the same identity again (it resumes) and set the latch.
+   Task records live under `$CANOPUS_STATE_DIR` on one machine. On a
+   different machine there is no record yet: admit with the envelope recorded
+   in the Issue, then replay the accepted items and open blockers listed in the
+   latest handoff comment as events before continuing. The Issue is the
+   portable state; the local record is a cache of it.
 4. Obey the successor permission: `CONTINUE` allows only the authorized next
    action; `ALIGNMENT ONLY` forbids material mutation; `STOP` forbids all
    execution until the owner re-admits.

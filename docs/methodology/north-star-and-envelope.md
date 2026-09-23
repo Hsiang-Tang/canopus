@@ -68,6 +68,14 @@ finding and shown to the owner at the end. It does not become work in this
 task. When `AC1`–`AC3` are accepted, the task is `COMPLETE` and stops, even
 though the menu is still slow.
 
+## When you cannot write acceptance yet
+
+If the honest answer to "what is done?" is "we don't know yet", run an
+exploration task first (`rules/development.md`, "Exploration tasks"): one
+question, a timebox, and a fixed output — findings plus a proposed envelope.
+Then admit the real task with that envelope. This keeps fast experiments fast
+without letting open-ended work run under a delivery task's name.
+
 ## Checklist for writing an envelope
 
 - Each acceptance item is observable and independently checkable.
