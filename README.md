@@ -67,7 +67,8 @@ python3 tools/validate.py                     # every validator and test
 The dashboard renders every task as one self-contained HTML page: goal,
 accepted / total, convergence state and decision, and the event timeline with
 the state after each step. A static copy rendered from the synthetic scenarios
-is in [`docs/assets/dashboard-sample.html`](docs/assets/dashboard-sample.html);
+is in [`docs/assets/dashboard-sample.html`](docs/assets/dashboard-sample.html)
+([live](https://hsiang-tang.github.io/canopus/assets/dashboard-sample.html));
 without `--scenarios` it reads your real task records.
 
 In `runaway-fix-loop`, a synthetic agent produces nine commits, 80 test runs,
