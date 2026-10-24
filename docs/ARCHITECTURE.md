@@ -79,7 +79,8 @@ families break early; scope changes realign; satisfied acceptance completes and
 stops. The state renders as an Owner Footer and an Agent Handoff, and
 `footer_last_gate` checks that a response ends with the current footer.
 `tools/convergence_demo.py` replays the synthetic scenarios in
-`examples/scenarios/`.
+`examples/scenarios/`, and `tools/render_dashboard.py` renders the same
+replayed state, task records or scenarios, as one static HTML page.
 
 ```text
 checkpoint ──► outcome this cycle? ──yes──► HEALTHY

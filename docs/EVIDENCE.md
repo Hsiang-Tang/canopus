@@ -41,6 +41,7 @@ inside its owner.
 | Knowledge candidates are rejected if they keep identifiers or template placeholders; a pass still requires human review. | `tools/check_knowledge_candidate.py`; `test_identifiers_are_rejected`, `test_pass_still_requires_human_review` |
 | Machine paths and inventories stay out of Git; the workspace doctor is read-only. | `tools/workspace_doctor.py`, `rules/workspace.md` |
 | Publication is audited for secrets, personal paths, emails, and artifacts. | `tools/audit_publication.py`, `tests/test_audit_publication.py` |
+| The dashboard shows the same state as the CLI, one timeline row per event, and is a self-contained, escaped, deterministic page. | `tools/render_dashboard.py`; `test_admitted_task_matches_summary`, `test_timeline_has_one_row_per_event_with_state_after`, `test_page_is_self_contained_and_escaped`, `test_render_is_deterministic` |
 
 ## Verify in about one minute
 

@@ -34,8 +34,8 @@ before changing behavior.
 ## Development and verification
 
 - Requirements, design, and task state live in
-  `docs/specs/reference-foundation/`, `docs/specs/bounded-convergence/`, and
-  `docs/specs/framework-core/`.
+  `docs/specs/reference-foundation/`, `docs/specs/bounded-convergence/`,
+  `docs/specs/framework-core/`, and `docs/specs/task-dashboard/`.
 - Architecture decisions live in `docs/adr/`; accepted decisions are preserved
   rather than silently rewritten.
 - Keep runtime dependencies to the Python standard library unless an accepted

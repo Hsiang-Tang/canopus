@@ -33,6 +33,7 @@ python3 tools/validate.py --deny internal-codename
 | FW-004 recommendation-only routing | `tools/model_route.py`, `routing/catalog.toml` | `tests/test_model_route.py` |
 | FW-005 workstream safety | `tools/workstream.py`, `examples/workstreams/` | `tests/test_workstream.py` |
 | FW-006 knowledge gate | `tools/check_knowledge_candidate.py` | `tests/test_check_knowledge_candidate.py` |
+| DASH-001 to DASH-007 task dashboard | `tools/render_dashboard.py`, `docs/assets/dashboard-sample.html` | `tests/test_render_dashboard.py` |
 | FW-007 adoptable kit | `rules/`, `docs/methodology/`, `templates/`, `playbooks/` | CLI cross-check and publication audit at delivery |
 | REF-007 clean delivery | Git audit and clean-checkout run | tracked-files review and fresh-clone evidence at delivery |
 

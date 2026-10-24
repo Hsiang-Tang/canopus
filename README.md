@@ -60,8 +60,15 @@ Python 3.11+ and Git; no third-party packages.
 ```sh
 git clone https://github.com/Hsiang-Tang/canopus.git && cd canopus
 python3 tools/convergence_demo.py --all       # replay four synthetic agent runs
+python3 tools/render_dashboard.py --scenarios examples/scenarios --serve   # same runs as a live page
 python3 tools/validate.py                     # every validator and test
 ```
+
+The dashboard renders every task as one self-contained HTML page: goal,
+accepted / total, convergence state and decision, and the event timeline with
+the state after each step. A static copy rendered from the synthetic scenarios
+is in [`docs/assets/dashboard-sample.html`](docs/assets/dashboard-sample.html);
+without `--scenarios` it reads your real task records.
 
 In `runaway-fix-loop`, a synthetic agent produces nine commits, 80 test runs,
 two corrections, and a review, but closes only one of three acceptance items.
@@ -155,6 +162,8 @@ workspace doctor, the publication audit, a diagram freshness check, the full
 unit test suite, Python compilation, and diff checks. Hosted CI is
 intentionally absent; a delivery must pass the same pipeline from a clean
 checkout of its exact commit.
+
+Verified locally on 2026-10-24: 180 tests pass (`python3 tools/validate.py`).
 
 Everything in this repository is synthetic. It contains no real project,
 customer, employer, or personal data, and automated scans are defense in depth,
