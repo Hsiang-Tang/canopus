@@ -28,8 +28,10 @@ before changing behavior.
   grants permission to copy their data.
 - Unknown disclosure safety fails closed: omit the material and request human
   review.
-- Do not enable Pages, publish releases or packages, add collaborators, or
-  change repository visibility as part of ordinary development.
+- GitHub Pages is on (owner decision, 2026-10-24) and serves `docs/` from
+  `main`, so the dashboard sample is live. Do not publish releases or
+  packages, add collaborators, change Pages settings, or change repository
+  visibility as part of ordinary development.
 
 ## Development and verification
 
