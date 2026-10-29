@@ -54,3 +54,17 @@ before changing behavior.
 - Inspect staged paths and the staged diff before every commit. Push only to
   the verified owner remote.
 - Commit identity and AI-attribution policy follow `rules/git.md`.
+
+## Where things go
+
+| Path | What belongs there |
+| --- | --- |
+| `rules/` | Development, Git and knowledge-promotion rules |
+| `playbooks/` | On-demand procedures, indexed in `playbooks/index.md` |
+| `knowledge/` | Distilled, reviewed practice notes |
+| `templates/` | ADR, handoff and bootstrap templates |
+| `routing/` | Model routing catalog |
+| `tools/` | Deterministic checks and the task CLI |
+| `examples/` | Synthetic workspace and scenarios |
+| `changelog.d/` | Change fragments |
+| `docs/`, `tests/` | Documentation and the test suite |
